@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
-gem 'mysql2','~> 0.3.20'
+#gem 'mysql2','~> 0.3.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +29,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+gem "heroku"
+gem "therubyracer"
+group :development, :test do
+	gem 'mysql2','~> 0.3.20'
+	gem 'taps'
+end
+group :production do
+	gem "pg"   #heroku supports only pg db
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
